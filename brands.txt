@@ -1,0 +1,4 @@
+[{"brand":"Audi"},{"brand":"Bentley"},{"brand":"BMW"},{"brand":"Cadillac"},{"brand":"Chevrolet"},{"brand":"Chrysler"},{"brand":"Citroen"},{"brand":"Daewoo"},{"brand":"Dodge"},{"brand":"FIAT"},{"brand":"Ford"},{"brand":"Geely"},{"brand":"GreatWall"},{"brand":"Honda"},{"brand":"Hyundai"},{"brand":"Infiniti"},{"brand":"Jaguar"},{"brand":"KIA"},{"brand":"Lada"},{"brand":"LandRover"},{"brand":"Lexus"},{"brand":"Mazda"},{"brand":"Mercedes-Benz"},{"brand":"MINI"},{"brand":"Mitsubishi"},{"brand":"Nissan"},{"brand":"Opel"},{"brand":"Peugeot"},{"brand":"Porsche"},{"brand":"Renault"},{"brand":"Rolls-Royce"},{"brand":"SEAT"},{"brand":"Skoda"},{"brand":"smart"},{"brand":"SsangYong"},{"brand":"Subaru"},{"brand":"Suzuki"},{"brand":"Toyota"},{"brand":"UAZ"},{"brand":"Volvo"},{"brand":"VW"},{"brand":"ZAZ"},{"brand":"Другое"},{"brand":""}]
+
+db.cars.update({brand:"ZAZ"}, {$set:{models:["(все)", "Chance", "Vida"]}})
+
