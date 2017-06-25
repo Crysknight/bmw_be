@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="wrapper wrapper_starter wrapper_authentification">
+        <div class="modal modal_auth">
+            <div class="modal__window modal__window_auth">
+                <div class="modal__header">
+                    <img src="img/icon-close.svg" class="modal__close">
+                </div>
+                <h3 class="title title_main_s title_main_s_modal">Подарок от BMW</h3>
+                <p class="text">Для получения ключа доступа, пожалуйста,<br> обратитесь к работнику бизнес зала.</p>
+                <input type="text" class="input input_phone" name="code" placeholder="Ключ доступа">
+                <div class="modal__error"></div>
+                <button class="button button_auth button_form button_form_fr">Вход</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+    <script>
+        $(function() {
+            authentification();
+        })
+    </script>
+</body>
+
+</html>

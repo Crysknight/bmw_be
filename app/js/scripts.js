@@ -37,6 +37,7 @@ function dropdownMenu() {
 function userInactive() {
     var inactiveTime = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2000;
 
+    debugger;
     var timeout = void 0;
     // User events
     $(document).on('mousemove click scroll tap', function () {
@@ -53,6 +54,7 @@ function userInactive() {
     // Set counter function
     function inactivityCounter() {
         timeout = setTimeout(function () {
+            Cookies.remove('region');
             backToStarterVideo();
         }, inactiveTime);
     }
@@ -64,7 +66,7 @@ function userInactive() {
 /*Close video and go to application*/
 function startApplication() {
     $(document).on('click tap', function () {
-        document.location.href = "/page-home.html";
+        document.location.href = "/page-authentification.html";
     });
 }
 /*-----*/
@@ -132,7 +134,7 @@ function modalWindows() {
                 var key = currentItem.attr('name');
                 data[key] = currentItem.val();
             });
-            data = 'data=' + JSON.stringify(data);
+            // data = 'data=' + JSON.stringify(data);
             console.log(data);
             $.ajax({
                 type: 'POST',
@@ -161,7 +163,7 @@ function modalWindows() {
         $.ajax({
             url: 'cars.php',
             success: function success(cars) {
-                console.log(cars);
+                // console.log(cars);
                 $('select[name="carBrand"]').html(cars);
                 $('select').selectric({
                     arrowButtonMarkup: '<b class="button"><img src="img/select-arrow.png" class="button__image" alt=""></b>'
@@ -177,7 +179,7 @@ function modalWindows() {
                     brand: carBrand
                 },
                 success: function success(models) {
-                    console.log(models);
+                    // console.log(models);
                     $('select[name="carModel"]').html(models);
                     $('select').selectric({
                         arrowButtonMarkup: '<b class="button"><img src="img/select-arrow.png" class="button__image" alt=""></b>'
@@ -206,3 +208,37 @@ function customCheck() {
     }
 }
 /*-----*/
+
+function authentification() {
+    $('.button_auth').on('click', function (e) {
+        var data = {};
+        var response = void 0;
+        var currentModal = $(e.target).closest('.modal__window');
+        $('.modal__error').empty();
+        currentModal.find('.input , .select').each(function () {
+            var currentItem = $(this);
+            var key = currentItem.attr('name');
+            data[key] = currentItem.val();
+        });
+        // data = 'data=' + JSON.stringify(data);
+        // console.log(data);
+        $.ajax({
+            type: 'POST',
+            url: '/api/region-authenticate',
+            datatype: 'json',
+            data: data,
+            success: function success(res) {
+                // console.log(res);
+                if (res) {
+                    Cookies.set('region', res.name);
+                    goForward();
+                } else {}
+            }
+        });
+        /*Go to next step conditions*/
+        var goForward = function goForward() {
+            document.location.href = "/page-home.html";
+        };
+        /*-----*/
+    });
+}

@@ -1,0 +1,1 @@
+copyfiles ./app/**/* ../bmw_be/app/

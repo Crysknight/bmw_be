@@ -8,6 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 // var multer = require('multer');
 var mongoose = require('mongoose');
+var moment = require('moment');
 
 var routes = require('./routes');
 
@@ -26,7 +27,13 @@ app.post('/api/register', (req, res) => routes.register(req, res));
 
 app.post('/api/add-gift', (req, res) => routes.addGift(req, res));
 
-app.post('/api/get-gifts', (req, res) => routes.getGifts(req, res));
+app.get('/api/get-gifts', (req, res) => routes.getGifts(req, res));
+
+app.post('/api/add-region', (req, res) => routes.addRegion(req, res));
+
+app.post('/api/region-authenticate', (req, res) => routes.regionAuthenticate(req, res));
+
+app.post('/api/send-sms', (req, res) => routes.sendSMS(req, res));
 
 app.listen(80);
-console.log('Running on port 80...');
+console.log('Running on port 80... --- ' + moment().format('HH:mm:ss'));
