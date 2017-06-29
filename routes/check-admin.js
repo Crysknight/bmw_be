@@ -1,6 +1,7 @@
-var User = require('../models/user');
+var Admin = require('../models/admin');
 
 module.exports = function(req, res, next) {
+	console.log(req.cookies);
 	var pathName = req.originalUrl.replace(/\/admin\//, '');
 	if (
 		(pathName.match(/js|css|fonts|img|font/) !== null &&
@@ -8,10 +9,13 @@ module.exports = function(req, res, next) {
 		pathName === 'login.html'
 	) {
 		next();	
+	} else if (!req.cookies.token) {
+		res.redirect('/admin/login.html');
 	} else {
-		User.findOne({ token: req.cookies.token })
-			.then(user => {
-				if (!user) {
+		Admin.findOne({ token: req.cookies.token })
+			.then(admin => {
+				console.log(admin);
+				if (!admin) {
 					res.redirect('/admin/login.html');
 				} else {
 					next();

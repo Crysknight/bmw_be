@@ -12,9 +12,11 @@ var moment = require('moment');
 
 var routes = require('./routes');
 
+app.use((req, res, next) => routes.checkAuth(req, res, next));
 
 // Serving build folder with an app in it
 app.use(express.static(path.join(__dirname, 'app')));
+
 
 app.use('/admin/*', (req, res, next) => routes.checkAdmin(req, res, next));
 
@@ -34,6 +36,16 @@ app.post('/api/add-region', (req, res) => routes.addRegion(req, res));
 app.post('/api/region-authenticate', (req, res) => routes.regionAuthenticate(req, res));
 
 app.post('/api/send-sms', (req, res) => routes.sendSMS(req, res));
+
+app.post('/api/initiate-user', (req, res) => routes.initiateUser(req, res));
+
+app.post('/api/check-code', (req, res) => routes.checkCode(req, res));
+
+app.get('/api/get-cars', (req, res) => routes.getCars(req, res));
+
+app.post('/api/get-car-models', (req, res) => routes.getCarModels(req, res));
+
+app.post('/api/complete-user', (req, res) => routes.completeUser(req, res));
 
 app.listen(80);
 console.log('Running on port 80... --- ' + moment().format('HH:mm:ss'));

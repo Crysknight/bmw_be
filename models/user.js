@@ -1,23 +1,33 @@
 var mongoose = require('mongoose');
-var passwordHash = require('password-hash');
 var connection = require('../mongo-connection');
+var ObjectId = mongoose.Schema.Types.ObjectId;
 
 //User Schema
 var userSchema = mongoose.Schema({
-	login: {
-		type: String,
-		unique: true,
-		required: true
+	code: String,
+	phone: String,
+	car: {
+		brand: String,
+		model: String
 	},
-	pass: {
-		type: String,
-		required: true
+	region: {
+		type: ObjectId,
+		ref: 'Region'
 	},
-	role: {
-		type: String,
-		required: true
+	city: String,
+	email: String,
+	fullName: {
+		name: String,
+		lastName: String,
+		patronymic: String
 	},
-	token: String
+	gender: String,
+	gift: {
+		type: ObjectId,
+		ref: 'Gift'
+	}
 });
 
 var User = module.exports = connection.model('User', userSchema);
+
+//d20000;

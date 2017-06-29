@@ -1,16 +1,16 @@
-var User = require('../models/user');
+var Admin = require('../models/admin');
 var passwordHash = require('password-hash');
 
 module.exports = function(req, res) {
 	delete req.body.token;
-	var user = new User(req.body);
-	user.pass = passwordHash.generate(user.pass);
-	user.save()
-		.then(user => {
-			user = user.toObject();
-			user.id = user._id;
-			delete user._id;
-			res.json(user);
+	var admin = new Admin(req.body);
+	admin.pass = passwordHash.generate(admin.pass);
+	admin.save()
+		.then(admin => {
+			admin = admin.toObject();
+			admin.id = admin._id;
+			delete admin._id;
+			res.json(admin);
 		})
 		.catch(err => {
 			console.log(err);

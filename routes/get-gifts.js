@@ -10,7 +10,7 @@ module.exports = function(req, res) {
 						<div class="slider__nav menu">
 			`;
 			for (let gift of gifts) {
-				let name = gift.name.slice(0, 17);
+				let name = gift.name.slice(0, 35);
 				if (name !== gift.name) {
 					name = name.trim() + '...';
 				}
@@ -31,7 +31,7 @@ module.exports = function(req, res) {
 								<div class='slider__content-box'>
 									<h4 class='title title_sub title_sub_black'>${gift.name}</h4>
 									${gift.description}
-									<button class='button button_slider'>Выбрать этот сувенир</button>
+									<button id='gift_${gift._id}' class='button button_slider'>Выбрать этот сувенир</button>
 								</div>
 							</div>
 				`;

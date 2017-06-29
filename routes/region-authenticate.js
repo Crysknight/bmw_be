@@ -1,7 +1,6 @@
 var Region = require('../models/region');
 
 module.exports = function(req, res) {
-	console.log(req.body);
 	Region.findOne({ code: req.body.code })
 		.then(region => {
 			region = region.toObject();
