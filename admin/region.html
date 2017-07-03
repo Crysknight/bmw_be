@@ -12,7 +12,7 @@
 <link href="css/font-awesome.css" rel="stylesheet">
 <link href="fonts/stylesheet.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link href="css/pages/dashboard.css" rel="stylesheet">
+<link href="css/pages/region.css" rel="stylesheet">
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,7 +25,7 @@
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index.html">Панель администратора</a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
-  
+          <!-- Here the menu -->
           <li class="dropdown"><a href="#" class="dropdown-toggle" id="user_name" data-toggle="dropdown"><i
                             class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -41,7 +41,7 @@
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav" id="index_menu">
-        <!-- Here the menu -->
+
       </ul>
     </div>
   </div>
@@ -51,10 +51,10 @@
     <div class="container">
       <div class="row">
         <div class="span12">
-          <h2 class="index-title">Регионы</h2>                      
-          <div id="regions">
-            <!-- Here the regions -->
-          </div>
+          <h2>Регион</h2>
+          <div id="region">
+            <!-- Here the region -->
+          </div>       
         </div>
       </div>
     </div>
@@ -66,11 +66,9 @@
 <script src="js/js-cookie.js"></script>
  
 <script src="js/base.js"></script> 
-<script>       
+<script>     
 
       $(document).ready(function() {
-
-        var bmw_role = Cookies.get('role');
 
         // Getting username from cookies
         var userName = $('#user_name');
@@ -90,67 +88,27 @@
 
         //Menu creation
         var indexMenu = $('#index_menu');
-        if (bmw_role === 'global_admin') {
-          indexMenu.append('<li class="active"><a href="index.html"><i class="icon-globe"></i><span>Регионы</span></a></li>');
+        if (Cookies.get('role') === 'global_admin') {
+          indexMenu.append('<li><a href="index.html"><i class="icon-globe"></i><span>Регионы</span></a></li>');
           // indexMenu.append('<li><a href="gifts.html"><i class="icon-gift"></i><span>Подарки</span></a></li>');
           // indexMenu.append('<li><a href="orders.html"><i class="icon-archive"></i><span>Заказанные подарки</span></a></li>');
         }
 
-        //Getting region(s)
-        if (bmw_role === 'global_admin') {
-          $.ajax({
-            url: '/api/get-regions',
-            type: 'GET',
-            success: function(res) {
-              $('#regions').html(res);
-              $('.submit-password').on('click', function() {
-                var passwordInput = $(this).prev();
-                var id = passwordInput.attr('id').slice(8);
-                var value = passwordInput.val();
-                if (value) {
-                  $.ajax({
-                    url: '/api/change-admin-password',
-                    type: 'POST',
-                    datatype: 'json',
-                    data: {
-                      id: id,
-                      pass: value
-                    },
-                    success: function(res) {
-                      console.log(res);
-                    },
-                    error: function(err) {
-                      console.log(err);
-                    }
-                  })
-                } else {
-                  console.log('no value');
-                }
-              });
-            },
-            error: function(err) {
-              console.log(err);
-            }
-          });
-        } else if (bmw_role === 'regional_admin') {
-          $.ajax({
-            url: '/api/get-region',
-            type: 'POST',
-            data: {
-              adminId: Cookies.get('id')
-            },
-            success: function(res) {
-              $('#regions').html(res);
-              $('.index-title').text('Регион ' + $('.single-region .name').text());
-              $('.single-region .name').text('');
-              $('.single-region .region-code').css({ float: 'left' });
-              $('.region-name').append('<div class="sum">Всего заказанных подарков: ' + $('.accordion-group.gift').length + '</div>');
-            },
-            error: function(err) {
-              console.log(err);
-            }
-          });
-        }  
+        //Getting region
+        $.ajax({
+          url: '/api/get-region',
+          type: 'POST',
+          data: {
+            id: document.location.search.slice(4)
+          },
+          success: function(res) {
+            $('#region').html(res);
+            $('<div class="sum">Всего: ' + $('.accordion-group.gift').length + '</div>').insertBefore($('#gifts_accordion'));
+          },
+          error: function(err) {
+            console.log(err);
+          }
+        });
         
       });
     </script>

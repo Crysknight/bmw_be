@@ -1,10 +1,9 @@
 var User = require('../models/user');
+var Gift = require('../models/gift');
 var mongoose = require('mongoose');
 
 module.exports = function(req, res) {
 	var error = [];
-	console.log(req.body.termsAgree);
-	console.log(!req.body.termsAgree);
 	for (field in req.body) {
 		if (
 			field === 'gender' ||
@@ -40,7 +39,8 @@ module.exports = function(req, res) {
 			city: req.body.city,
 			// email: req.body.email,
 			gender: req.body.gender,
-			gift: req.body.giftId
+			gift: req.body.giftId,
+			region: req.body.region
 		},
 		$unset: {
 			code: ''
@@ -50,14 +50,28 @@ module.exports = function(req, res) {
 		update.$set['car.model'] = req.body.carModel;
 	}
 	if (req.body.patronymic) {
-		update.$set['fullname.patronymic'] = req.body.patronymic;
+		update.$set['fullName.patronymic'] = req.body.patronymic;
 	}
 	if (req.body.email) {
 		update.$set.email = req.body.email;
 	}
 	User.findByIdAndUpdate(req.body.id, update)
 		.then(user => {
-			res.send('ok');
+			if (!user) {
+				res.status(500).send('Unidentified error');
+				return 'end';
+			} else {
+				return Gift.findByIdAndUpdate(req.body.giftId, { $inc: { quantity: -1 } });
+			}
+		})
+		.then(gift => {
+			if (gift === 'end') {
+				return 'end';
+			} else if (!gift) {
+				res.status(500).send('Unidentified error');
+			} else {
+				res.send('ok');
+			}
 		})
 		.catch(err => {
 			res.status(500).send('Unidentified error');

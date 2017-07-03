@@ -26,15 +26,16 @@ module.exports = function(req, res) {
 				res.json(user);
 			// });
 			setTimeout(() => {
-				User.findById(user._id)
-					.then(user => {
-						if (!user.fullname) {
-							user.remove();
-						}
+				User.remove({
+					_id: user.id,
+					fullName: { $exists: false }
+				})
+					.then(res => {
+
 					})
 					.catch(err => {
 						console.log(err);
-					})
+					});
 			}, 3600000);
 		})
 		.catch(err => {

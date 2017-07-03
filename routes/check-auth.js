@@ -22,6 +22,13 @@ module.exports = function(req, res, next) {
 					next();
 				}
 			})
+			.catch(err => {
+				if (err.message.indexOf('Cast to ObjectId failed') !== -1) {
+					res.redirect('/page-authentification.html');
+				} else {
+					res.status(500).send('Unidentified error');	
+				}
+			});
 	}
 
 };

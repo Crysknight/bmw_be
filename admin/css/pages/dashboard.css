@@ -3,6 +3,120 @@ Bootstrap Admin Template by EGrappler.com
 ------------------------------------------------------------------*/
 
 
+h2 {
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+a {
+	color: #1c69d4;
+}
+
+.region {
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.region-name {
+	font-size: 28px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #d4d4d4;
+	padding-bottom: 8px;
+	margin-bottom: 15px;
+}
+
+h3.region-code {
+	display: inline-block;
+	float: right;
+	color: #1c69d4;
+	text-transform: uppercase;
+	margin-right: 30px;
+}
+
+.set-password {
+	height: 12px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+}
+
+input.submit-password[type="submit"] {
+	height: 22px;
+	line-height: 13px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 4px;
+	margin-left: 4px;
+	background-color: #1c69d4;
+	border-color: #1c69d4;
+	box-shadow: none;
+	color: #fff;
+}
+
+.region-admin {
+	margin: 5px 0;
+}
+
+.region-admin p {
+	margin: 0 0 5px;
+}
+
+.single-region {
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.single-region .region-name {
+	font-size: 28px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #d4d4d4;
+	padding-bottom: 8px;
+	margin-bottom: 15px;
+}
+
+.single-region .region-name div {
+	display: inline-block;
+}
+
+.single-region .region-code {
+	float: right;
+	color: #1c69d4;
+	text-transform: uppercase;
+	margin-right: 30px;
+}
+
+.single-region .gifts h3 {
+	margin: 0 0 5px 2px;
+}
+
+.single-region .gift-name {
+	text-transform: uppercase;
+	color: #111;
+}
+
+.single-region .user-name {
+	display: inline-block;
+	float: right;
+}
+
+.single-region .user-car {
+	margin: 10px 0;
+}
+
+.single-region .user-car p {
+	margin: 0;
+}
+
+.single-region .sum {
+	text-transform: none;
+	font-size: 16px;
+	color: #545454;
+	float: right;
+}
 
 /*------------------------------------------------------------------
 [1. Shortcuts / .shortcuts]

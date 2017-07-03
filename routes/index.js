@@ -12,6 +12,11 @@ var checkCode = require('./check-code');
 var getCars = require('./get-cars');
 var getCarModels = require('./get-car-models');
 var completeUser= require('./complete-user');
+var removeIncompleteUsers = require('./remove-incomplete-users');
+var getRegions = require('./get-regions');
+var changeAdminPassword = require('./change-admin-password');
+var checkToken = require('./check-token');
+var getRegion = require('./get-region');
 
 module.exports = {
 	login,
@@ -27,5 +32,10 @@ module.exports = {
 	checkCode,
 	getCars,
 	getCarModels,
-	completeUser
+	completeUser,
+	removeIncompleteUsers,
+	getRegions,
+	changeAdminPassword,
+	checkToken,
+	getRegion
 };

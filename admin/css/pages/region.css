@@ -1,0 +1,47 @@
+.single-region {
+	border: 1px solid #d4d4d4;
+	border-radius: 2px;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+.region-name {
+	font-size: 28px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #d4d4d4;
+	padding-bottom: 8px;
+	margin-bottom: 15px;
+}
+
+.region-name div {
+	display: inline-block;
+}
+
+.region-code {
+	float: right;
+	color: #1c69d4;
+	text-transform: uppercase;
+	margin-right: 30px;
+}
+
+.gifts h3 {
+	margin: 0 0 5px 2px;
+}
+
+.gift-name {
+	text-transform: uppercase;
+	color: #111;
+}
+
+.user-name {
+	display: inline-block;
+	float: right;
+}
+
+.user-car {
+	margin: 10px 0;
+}
+
+.user-car p {
+	margin: 0;
+}

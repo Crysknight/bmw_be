@@ -11,7 +11,7 @@ var regionSchema = mongoose.Schema({
 	},
 	admin: {
 		type: ObjectId,
-		ref: 'User',
+		ref: 'Admin',
 		required: true
 	},
 	code: {

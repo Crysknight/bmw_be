@@ -126,14 +126,14 @@
 		loginForm.submit(function(e) {
 			e.preventDefault();
 			var data = $(this).serialize();
-			console.log(data);
+			// console.log(data);
 			$.ajax({
 				url: '/api/login',
 				type: 'POST',
 				data: data,
 				success: function(res) {
-					console.log(res);
-					debugger;
+					// console.log(res);
+					// debugger;
 					window.location = '/admin/';
 				},
 				error: function(err) {

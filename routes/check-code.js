@@ -12,6 +12,11 @@ const lettersMap = {
 };
 
 module.exports = function(req, res) {
+	// console.log(req.body.code);
+	if (!req.body.code) {
+		res.status(401).send('no code');
+		return;
+	}
 	let code = req.body.code.toUpperCase();
 	for (letter in lettersMap) {
 		let re = new RegExp(letter, 'g');
