@@ -1282,3 +1282,29 @@ color: #333;
 	
 }
 
+
+
+#gifts .gifts>div {
+	border: 1px solid #666;
+	border-radius: 6px;
+	padding: 25px;
+	margin-top: 25px;
+	margin-bottom: 40px;
+}
+
+#gifts img {
+	width: 350px;
+	display: block;
+	margin-bottom: 25px;
+}
+
+#gifts h4 {
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+#gifts .gift-quantity {
+	font-weight: bold;
+	font-size: 20px;
+	color: #1c69d4;
+}
