@@ -394,8 +394,14 @@ function authentification() {
 $(document).ready(function() {
     let dealersNetElements = $('.menu__link, .card').filter(function() {
         if ($(this).text() === 'Дилерская сеть') return true;
-        if ($(this).find('title_main_s').text() === 'ДИЛЕРСКАЯ СЕТЬ.') return true;
+        if ($(this).find('.title_main_s').text() === 'ДИЛЕРСКАЯ СЕТЬ.') return true;
         return false;
     });
-    console.log(dealersNetElements);
+    dealersNetElements.click(function(event) {
+        event.preventDefault();
+        $('body').append(`
+            <iframe class="bmw-iframe" src="https://www.bmw.ru/ru_RU/fastlane/dealer-locator.html#/RU/ru/BMW_BMWM">
+            </iframe>
+        `);
+    });
 });
