@@ -389,3 +389,13 @@ function authentification() {
         /*-----*/
     });
 }
+
+
+$(document).ready(function() {
+    let dealersNetElements = $('.menu__link, .card').filter(function() {
+        if ($(this).text() === 'Дилерская сеть') return true;
+        if ($(this).find('title_main_s').text() === 'ДИЛЕРСКАЯ СЕТЬ.') return true;
+        return false;
+    });
+    console.log(dealersNetElements);
+});
