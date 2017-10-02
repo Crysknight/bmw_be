@@ -1113,4 +1113,17 @@ a
     left: 0;
     width: 100%;
     height: 100vh;
+    opacity: 1;
+}
+
+.bmw-iframe:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-image: url('/img/icon-close.svg');
+    cursor: pointer;
 }
