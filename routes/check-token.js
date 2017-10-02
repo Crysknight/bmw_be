@@ -5,7 +5,8 @@ const globalAdminPaths = [
 	'add-region',
 	'add-gift',
 	'get-regions',
-	'register'
+	'register',
+	'get-gifts-admin'
 ];
 
 const regionalAdminPaths = [

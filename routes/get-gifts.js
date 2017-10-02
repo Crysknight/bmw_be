@@ -25,9 +25,10 @@ module.exports = function(req, res) {
 						<div class='slider__tape'>
 			`;
 			for (let gift of gifts) {
+				console.log(gift.image);
 				resHTML += `
 							<div>
-								<div class='slider__image-box'><img src='img/bear.jpg' alt='' class='slider__image'></div>
+								<div class='slider__image-box'><img src='img/${gift.image}' alt='' class='slider__image'></div>
 								<div class='slider__content-box'>
 									<h4 class='title title_sub title_sub_black'>${gift.name}</h4>
 									${gift.description}

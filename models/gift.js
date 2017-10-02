@@ -14,7 +14,8 @@ var giftSchema = mongoose.Schema({
 	quantity: {
 		type: Number,
 		min: 0
-	}
+	},
+	image: String
 });
 
 var Gift = module.exports = connection.model('Gift', giftSchema);

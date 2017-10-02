@@ -55,6 +55,8 @@ app.post('/api/change-admin-password', (req, res) => routes.changeAdminPassword(
 
 app.post('/api/get-region', (req, res) => routes.getRegion(req, res));
 
+app.get('/api/get-gifts-admin', (req, res) => routes.getGiftsAdmin(req, res));
+
 app.listen(80);
 
 routes.removeIncompleteUsers();

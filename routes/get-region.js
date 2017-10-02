@@ -38,6 +38,10 @@ module.exports = function(req, res) {
 			}
 		})
 		.then(users => {
+			users = users.sort(function(a, b) {
+				if (a.gift.name > b.gift.name) return 1;
+				if (a.gift.name < b.gift.name) return -1;
+			});
 			if (users === 'end') {
 				return 'end';
 			} else {

@@ -17,6 +17,7 @@ var getRegions = require('./get-regions');
 var changeAdminPassword = require('./change-admin-password');
 var checkToken = require('./check-token');
 var getRegion = require('./get-region');
+var getGiftsAdmin = require('./get-gifts-admin');
 
 module.exports = {
 	login,
@@ -37,5 +38,6 @@ module.exports = {
 	getRegions,
 	changeAdminPassword,
 	checkToken,
-	getRegion
+	getRegion,
+	getGiftsAdmin
 };
