@@ -1103,6 +1103,6 @@ a
 
 .slider__image {
     width: auto;
-    min-height: 300px;
+    max-height: 300px;
     margin: 0 auto;
 }
