@@ -402,8 +402,9 @@ $(document).ready(function() {
         $('body').append(`
             <iframe class="bmw-iframe" src="https://www.bmw.ru/ru_RU/fastlane/dealer-locator.html#/RU/ru/BMW_BMWM">
             </iframe>
+            <div class="bmw-iframe-after"></div>
         `);
-        $('.bmw-iframe:after').click(function() {
+        $('.bmw-iframe-after').click(function() {
             $('.bmw-iframe').animate({ 'opacity': 0 }, 300, function() {
                 $('.bmw-iframe').remove();
             });
