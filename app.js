@@ -25,7 +25,7 @@ app.use('/admin/*', (req, res, next) => routes.checkAdmin(req, res, next));
 // Serving admin folder with an app in it
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 
-app.use('/api/*', (req, res, next) => routes.checkToken(req, res, next));
+// app.use('/api/*', (req, res, next) => routes.checkToken(req, res, next));
 
 app.post('/api/login', (req, res) => routes.login(req, res));
 
