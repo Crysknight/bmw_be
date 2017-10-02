@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/libs.min.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container header__container">
+                <ul class="menu">
+                    <li class="menu__list-item"><a href="page-home.html" class="menu__link @@link.home">Home</a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__link menu__link_active">Подарок от BMW</a>
+                        <ul class="menu__submenu">
+                            <li class="menu__list-item menu__list-item_sub"><a href="page-present.html" class="menu__link menu__link_sub">Выбрать подарок от BMW</a></li>
+                            <li class="menu__list-item menu__list-item_sub"><a href="page-rules.html" class="menu__link menu__link_sub">Правила проведения акции</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__list-item"><a href="#" class="menu__link  @@link.test">Тест-драйв</a></li>
+                    <li class="menu__list-item"><a href="#" class="menu__link  @@link.dealers">Дилерская сеть</a></li>
+                </ul>
+                <img src="img/logo.png" alt="" class="header__logo">
+            </div>
+        </div>
+        <div class="header header_bg" style="background: url('img/child-bg.jpg') no-repeat; background-size: cover; background-position: 50% 50%;">
+
+        </div>
+        <div class="content content_inner">
+            <div class="container">
+                <h3 class="title title_main_s">ПРАВИЛА ПРОВЕДЕНИЯ АКЦИИ</h3>
+                <h4 class="title title_sub title_sub_l">Общие условия.</h4>
+                <p class="text">BMW Group Россия дарит памятные подарки всем посетителям бизнес-залов аэропортов Самары, Ростова-на-Дону, Нижнего Новгорода и Екатеринбурга.<br> Выберите подарок и пройдите регистрацию, поле чего в любом удобном для Вас дилерском центре
+                    BMW Вы сможете получить Ваш подарок.<br> Предложение действует до 31.12.2017г. Количество подарков ограничено.
+                </p>
+                <h4 class="title title_sub title_sub_l">Порядок передачи подарков.</h4>
+                <p class="text">Для получения выбранного Вами подарка Вам необходимо:<br> – Выбрать подарок из представленных в разделе «Подарок от BMW»<br> – Зарегистрироваться и получить СМС-подтверждение регистрации на телефон<br> – Выбрать удобный для Вас дилерский
+                    центр BMW в разделе «Дилерская сеть»<br> – Предъявить Ваш персональный код регистрации на стойке в дилерском центре и получить подарок.
+                </p>
+                <p class="text text_mt">
+                    Если Вы хотите связаться с представителями Службы клиентской поддержки BMW, то Вы можете позвонить нам по телефону:<br> 8 800 550 88 00 (звонок из городов РФ бесплатный) с 09:00 до 21:00.<br> +7 495 646 88 00 с 09:00 до 21:00.
+                </p>
+            </div>
+        </div>
+        <script src="js/scripts.js"></script>
+        <script>
+            $(function() {
+                userInactive(60000);
+            });
+        </script>
+</body>
+
+</html>
