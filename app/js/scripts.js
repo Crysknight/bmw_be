@@ -405,8 +405,26 @@ $(document).ready(function() {
             <div class="bmw-iframe-after"></div>
         `);
         $('.bmw-iframe-after').click(function() {
-            $('.bmw-iframe').animate({ 'opacity': 0 }, 300, function() {
-                $('.bmw-iframe').remove();
+            $('.bmw-iframe, .bmw-iframe-after').animate({ 'opacity': 0 }, 300, function() {
+                $('.bmw-iframe, .bmw-iframe-after').remove();
+            });
+        });
+    });
+    let testDriveNetElements = $('.menu__link, .card').filter(function() {
+        if ($(this).text() === 'Тест-драйв') return true;
+        if ($(this).find('.title_main_s').text() === 'ТЕСТ-ДРАЙВ BMW.') return true;
+        return false;
+    });
+    testDriveNetElements.click(function(event) {
+        event.preventDefault();
+        $('body').append(`
+            <iframe class="bmw-iframe" src="https://www.bmw.ru/ru/ssl/forms/TDR.html#/bookmark=aHR0cHM6Ly9jcm0uYm13LnJ1L3Rlc3Rkcml2ZXJlcXVlc3Q=">
+            </iframe>
+            <div class="bmw-iframe-after"></div>
+        `);
+        $('.bmw-iframe-after').click(function() {
+            $('.bmw-iframe, .bmw-iframe-after').animate({ 'opacity': 0 }, 300, function() {
+                $('.bmw-iframe, .bmw-iframe-after').remove();
             });
         });
     });
