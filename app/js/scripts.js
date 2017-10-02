@@ -403,11 +403,12 @@ $(document).ready(function() {
             <iframe class="bmw-iframe" src="https://www.bmw.ru/ru_RU/fastlane/dealer-locator.html#/RU/ru/BMW_BMWM">
             </iframe>
             <div class="bmw-iframe-after"></div>
-        `);
+        `).css({ 'overflow-y': 'hidden' });
         $('.bmw-iframe-after').click(function() {
             $('.bmw-iframe, .bmw-iframe-after').animate({ 'opacity': 0 }, 300, function() {
                 $('.bmw-iframe, .bmw-iframe-after').remove();
             });
+            $('body').css({ 'overflow-y': 'auto' });
         });
     });
     let testDriveNetElements = $('.menu__link, .card').filter(function() {
@@ -421,11 +422,12 @@ $(document).ready(function() {
             <iframe class="bmw-iframe" src="https://www.bmw.ru/ru/ssl/forms/TDR.html#/bookmark=aHR0cHM6Ly9jcm0uYm13LnJ1L3Rlc3Rkcml2ZXJlcXVlc3Q=">
             </iframe>
             <div class="bmw-iframe-after"></div>
-        `);
+        `).css({ 'overflow-y': 'hidden' });
         $('.bmw-iframe-after').click(function() {
             $('.bmw-iframe, .bmw-iframe-after').animate({ 'opacity': 0 }, 300, function() {
                 $('.bmw-iframe, .bmw-iframe-after').remove();
             });
+            $('body').css({ 'overflow-y': 'auto' });
         });
     });
 });
