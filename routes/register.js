@@ -4,6 +4,7 @@ var passwordHash = require('password-hash');
 module.exports = function(req, res) {
 	delete req.body.token;
 	var admin = new Admin(req.body);
+	console.log(admin.pass);
 	admin.pass = passwordHash.generate(admin.pass);
 	admin.save()
 		.then(admin => {
