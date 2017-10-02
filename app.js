@@ -17,6 +17,8 @@ app.use((req, res, next) => routes.checkAuth(req, res, next));
 // Serving build folder with an app in it
 app.use(express.static(path.join(__dirname, 'app')));
 
+app.post('/api/register', (req, res) => routes.register(req, res));
+
 
 app.use('/admin/*', (req, res, next) => routes.checkAdmin(req, res, next));
 
@@ -26,8 +28,6 @@ app.use('/admin', express.static(path.join(__dirname, 'admin')));
 app.use('/api/*', (req, res, next) => routes.checkToken(req, res, next));
 
 app.post('/api/login', (req, res) => routes.login(req, res));
-
-app.post('/api/register', (req, res) => routes.register(req, res));
 
 app.post('/api/add-gift', (req, res) => routes.addGift(req, res));
 
