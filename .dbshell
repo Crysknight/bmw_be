@@ -1,0 +1,38 @@
+5 + 3
+show dbs
+use local
+show collections
+show dbs
+use bmw
+use bmw
+show collections
+use bmw
+ls
+show collections
+db.regions.find().limit(1).pretty()
+use bmw
+show collections
+db.gifts.find().pretty()
+db.gifts.update({ name: 'Медвежонок Teddy Motorsport' }, { $set: { image: 'bear.jpg' } });
+db.gifts.update({ name: { regex: /полотенце/ } }, { $set: { image: 'towel.png' } });
+db.gifts.update({ name: { $regex: /полотенце/ } }, { $set: { image: 'towel.png' } });
+db.gifts.update({ name: { $regex: /зонт/ } }, { $set: { image: 'umbrella.png' } });
+db.gifts.update({ name: { $regex: /термокружка/ } }, { $set: { image: 'termos.png' } });
+db.gifts.update({ name: { $regex: /Термокружка/ } }, { $set: { image: 'termos.png' } });
+db.gifts.updateMany({ name: { $regex: /Термокружка/ } }, { $set: { image: 'termos.png' } });
+show collections
+db.gifts.update({ name: { $regex: /Термокружка BMW Motorsport/ } }, { $set: { image: 'termos.png' } });
+db.gifts.update({ name: { $regex: /Пауль/ } }, { $set: { image: 'paul.png' } });
+db.gifts.update({ name: { $regex: /Пауль/ } }, { $set: { image: 'paul.jpg' } });
+use bmw
+db.gifts.update({ name: { $regex: /Victor/ } }, { $set: { image: 'victor.jpg' } })
+db.gifts.update({ name: { $regex: /BMW 6/ } }, { $set: { image: 'bmw6.jpg' } })
+db.gifts.find().pretty()
+use bmw
+db.gifts.update({ name: { $regex: /BMW 6/ } }, { $set: { image: 'bmw6.jpg' } })
+db.gifts.update({ name: { $regex: /BMW Z4/ } }, { $set: { image: 'bmwz4.png' } })
+db.gifts.update({ name: { $regex: /Basic/ } }, { $set: { image: 'basic.png' } })
+db.gifts.update({ name: { $regex: /basic/ } }, { $set: { image: 'basic.png' } })
+use bmw
+show collections
+db.users.find().pretty()
