@@ -10,7 +10,8 @@ module.exports = function(req, res) {
 		return;
 	}
 	let sms = new SMSru('489A3B24-396D-FEFB-DFF9-593FB9C4A6B3');
-	let code = crypto.randomBytes(256).toString('hex').slice(0, 5).replace(/0/g, '1').toUpperCase();
+	// let code = crypto.randomBytes(256).toString('hex').slice(0, 5).replace(/0/g, '1').toUpperCase();
+	let code = 'AB455';
 	let user = new User({ code, phone });
 	user.save()
 		.then(user => {
