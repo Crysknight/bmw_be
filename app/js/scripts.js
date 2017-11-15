@@ -410,6 +410,9 @@ $(document).ready(function() {
             });
             $('body').css({ 'overflow-y': 'auto' });
         });
+        if ($(event.target).is('button.button_forward')) {
+            $('.modal').css({ display: none; height: auto; });
+        }
     });
     let testDriveNetElements = $('.menu__link, .card').filter(function() {
         if ($(this).text() === 'Тест-драйв') return true;
