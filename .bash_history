@@ -351,3 +351,22 @@ sudo pm2 monit app
 sudo git pull bmwberoot master
 sudo pm2 restart app
 sudo git pull bmwberoot master
+sudo mongo
+ls
+git add -A
+git commit -m "Checking the last stuff"
+git push
+git push --set-upstream origin master
+git pull
+sudo mongo
+vim routes/initiate-user.js
+sudo pm2 restart app
+sudo mongo
+ls
+sudo git pull
+sudo git pull\
+sudo git pull
+sudo pm2 start skimmer-manitoba.js
+sudo pm2 list
+cd www/cadrobocter_be/parsers
+ls

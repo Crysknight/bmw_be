@@ -36,3 +36,6 @@ db.gifts.update({ name: { $regex: /basic/ } }, { $set: { image: 'basic.png' } })
 use bmw
 show collections
 db.users.find().pretty()
+use bwm
+use bmw
+db.users.find().pretty()

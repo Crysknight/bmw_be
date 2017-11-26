@@ -168,3 +168,8 @@
 2017-10-02 19:23:35: pid=21183 msg=process killed
 2017-10-02 19:23:35: Starting execution sequence in -fork mode- for app name:app id:0
 2017-10-02 19:23:35: App name:app id:0 online
+2017-10-06 17:57:16: Stopping app:app id:0
+2017-10-06 17:57:16: App [app] with id [0] and pid [21303], exited with code [0] via signal [SIGINT]
+2017-10-06 17:57:16: pid=21303 msg=process killed
+2017-10-06 17:57:16: Starting execution sequence in -fork mode- for app name:app id:0
+2017-10-06 17:57:16: App name:app id:0 online
